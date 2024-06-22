@@ -1,0 +1,165 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+a{
+	text-decoration: none;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin:50px;
+}
+.header-login{
+    gap: 86px;
+}
+.personal-account{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-menu{
+     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+}
+
+.header-auth{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+
+}
+
+
+.field-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+
+}
+
+
+.form-field{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+
+.link-popup-bottom{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.forms-registration{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    }
+
+
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35vh;
+    margin-bottom: 35vh;
+    }
+
+
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#message-list{
+    margin: 45px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+#progress-bar{
+    height: 20px;
+    background-color: blue;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+
+.footer{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    }
+

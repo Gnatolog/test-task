@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <title>{% block title %}Интегратор почты{% endblock %}</title>
+
+</head>
+<body>
+<main class="main">
+            {% block header %}
+            {% if request.user.is_authenticated %}
+                <header class="header header-login">
+                    <div class="logo logo-login">
+                    </div>
+                    <div class="nav-menu">
+                        <a href="{% url 'start_page' %}" class="item-menu">Главная</a>
+                        <a href="{% url 'request_mail' %}" class="item-menu">Посмотреть почту</a>
+                    </div>
+                    <div class="header-auth">
+                            <span class="user">
+                                Привет {{ request.user.first_name|default:request.user.username }}
+                            </span>
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button class="button-exit" type="submit">
+                                    <p class="text-link-menu">выйти</p>
+                                </button>
+                            </form>
+                        </div>
+                </header>
+            {% else %}
+                <header class="header">
+                    <div class="logo">
+
+                    </div>
+                    <div class="nav-menu">
+                    </div>
+                    <div class="personal-account">
+                        <a href="{% url 'register' %}" class="item-personal-account-left">Регистрация</a>
+                        <a href="{% url 'login' %}" class="item-personal-account-right">Вход</a>
+                    </div>
+                </header>
+            {% endif %}
+            {% endblock %}
+    {% block content %}
+    <section class="content">
+        <h2 class="welcome-text">Добро пожаловать в интегратор почты</h2>
+    </section>
+    {% endblock %}
+    <footer class="footer">
+        <dev class="footer-content">
+            Все права защищены
+        </dev>
+        <p class="footer_text">&copy; 2024</p>
+        </footer>
+</main>
+
+</body>
+</html>
