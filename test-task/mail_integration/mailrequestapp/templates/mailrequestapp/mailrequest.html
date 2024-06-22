@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %]
+
+
+{% block title %}Загрузка сообщений{% endblock %}
+
+{% block content %}
+<div id="progress-bar" style="width: 0%;"></div>
+<h1>Загрузка с почты</h1>
+   <div id="message-list"></div>
+
+
+    <script>
+
+
+
+
+
+
+        const socket = new WebSocket('ws://' + window.location.host + '/ws/gmail/');
+
+        socket.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            console.log(data.progress);
+            document.getElementById('progress-bar').style.width = data.progress;
+            if (data.type === 'message_list') {
+                updateMessageList(data.messages);
+            }
+        };
+
+        function updateMessageList(messages) {
+            const messageList = document.getElementById('message-list');
+            messageList.innerHTML = '';
+
+            messages.forEach(message => {
+                const messageElement = document.createElement('div');
+                messageElement.textContent = `${message.id} ${message.created_at}
+                                              ${message.sent_at} ${message.description}
+                                              ${message.attachments} ${message.them_mail}`;
+                messageList.appendChild(messageElement);
+            });
+        }
+    </script>
+
+{% endblock %}

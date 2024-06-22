@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Вы успешно зарегистрировались{% endblock %}
+
+
+{% block content %}
+
+    <section class="forms-registration">
+        <h1 class="title-form">Добро пожаловать {{ name_user.first_name }}!</h1>
+        <p class="text-log-action">
+        Ваш аккаунт успешно создан
+        Можите войти в систему <a class="link-log-action" href="{% url 'login' %}">Войти</a>
+        </p>
+    </section>
+{% endblock %}
