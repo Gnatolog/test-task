@@ -22,8 +22,10 @@
 
         socket.onmessage = function(event) {
             const data = JSON.parse(event.data);
-            console.log(data.progress);
-            document.getElementById('progress-bar').style.width = data.progress;
+            if (data.progress < 101){
+              document.getElementById('progress-bar').style.width = data.progress +'%';
+            };
+
             if (data.type === 'message_list') {
                 updateMessageList(data.messages);
             }
