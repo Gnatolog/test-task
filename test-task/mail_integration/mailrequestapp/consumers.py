@@ -14,7 +14,11 @@ class GmailConsumer(AsyncWebsocketConsumer):
 
         # Получаем список сообщений из базы данных
         messages = await self.get_messages()
-        progress = str(min(int(time.time() % 10 * 10), 100))+'%'
+        progress = 0
+        if messages is not None:
+            progress += 100
+        else:
+            progress += min(int(time.time() % 10 * 10), 100)
         # Отправляем список сообщений клиенту
         await self.send(text_data=json.dumps({
             'type': 'message_list',
